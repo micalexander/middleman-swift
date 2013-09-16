@@ -1,6 +1,5 @@
-/* SCSS Framework boilerplate from MASK: https://github.com/micalexander/mask */
 // -------------------------------------------------
-// KL[AS] Compass Imports
+// Slim Compass Imports
 // ---------------------------------------------- */
 @import "partials/reset";
 @import "compass/css3/border-radius";
@@ -16,7 +15,7 @@
 
 
 // -------------------------------------------------
-// KL[AS] Variables
+// Slim Variables
 // ---------------------------------------------- */
 $heading-font: Helvetica, Arial, sans-serif;
 $body-font: Helvetica, Arial, sans-serif;
@@ -48,7 +47,7 @@ $mq-desktop: 920px;
 body,select,input,textarea{color:#333;}
 
 // -------------------------------------------------
-// KL[AS] Mixins
+// Slim Mixins
 // ---------------------------------------------- */
 
 
