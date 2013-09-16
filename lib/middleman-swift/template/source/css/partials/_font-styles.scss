@@ -1,0 +1,45 @@
+body {
+	color: $body-color;
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 150%;
+	font-family: $body-font;
+}
+a {
+	color: $link-color;
+	&:hover{
+		color: $link-hover;
+	}
+}
+h1 {
+	font-size: 2.25em;  /* 16x2.25=36 */
+	line-height: 1.33333333333333em; /* 48px */
+	color: $heading-color;
+}
+h2 {
+	font-size: 1.5em;   /* 16x1.5=24 */
+	color: $heading-color; /* 24px */
+}
+h3 {
+	font-size: 1.125em; /* 16x1.125=18 */
+	line-height: 1.33333333333333em; /* 24px */
+	color: $heading-color;
+}
+h4 {
+	font-size: 0.875em; /* 16x0.875=14 */
+	line-height: 1.71428571428571em; /* 24px */
+	color: $heading-color;
+}
+p {
+	font-size: 1em;		/* 16x1=16 */
+	padding-bottom: 1em;
+}
+ul {
+	list-style: disc;
+	margin: 0 0 0 1.1em;
+	padding-bottom: 1em;
+	nav & { // remove styling for nav ul's
+		@include ul-reset;
+		a { text-decoration: none; }
+	}
+}

@@ -1,0 +1,12 @@
+@import "partials/mask-framework";
+
+// -------------------------------------------------
+// Editor Styles
+// ---------------------------------------------- */
+
+#tinymce {
+	font-family: $body-font;
+	max-width: $page-width;
+	padding: 10px;
+}
+@import "partials/blog-styles";

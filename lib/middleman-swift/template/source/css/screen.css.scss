@@ -1,0 +1,80 @@
+@import "partials/mask-framework";
+@import "partials/font-styles";
+@import "icon/*.png";
+@include all-icon-sprites;
+
+// COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
+
+// .icon-logo {
+// 	@include sprite-dimensions($icon-sprites, logo );
+// }
+
+
+/* -------------------------------------------------
+** TEMPLATE
+** ---------------------------------------------- */
+* { @include box-sizing('border-box'); }
+
+/* iOS fixes */
+html { -webkit-text-size-adjust: none; }
+input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
+
+/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
+body:after { content: 'mobile'; display: none; }
+@media only screen and (min-width: $mq-desktop) {
+	body:after { content: 'desktop'; }
+}
+// STANDARD MEDIA QUERY EXAMPLE
+
+// @media screen and (min-width: $mq-desktop) {
+// /* styles here */
+// } // END @media: $mq-desktop
+
+// SLECTOR SPECIFIC MEDIA QUERY EXAMPLE
+// .example-selector
+// /* mobile styles here */
+// @include breakpoint(tablet) {
+// /* tablet styles here */
+// }
+// @include breakpoint(desktop) {
+// /* desktop styles here */
+// }
+// }
+
+
+/*--------------START BASE STRUCTURE-------------- */
+/* -------------------------------------------------
+** Body
+** ---------------------------------------------- */
+
+/* -------------------------------------------------
+** Wrapper
+** ---------------------------------------------- */
+
+/* -------------------------------------------------
+** Header
+** ---------------------------------------------- */
+
+/* -------------------------------------------------
+** Section
+** ---------------------------------------------- */
+
+/* -------------------------------------------------
+** Sidebar
+** ---------------------------------------------- */
+
+/* -------------------------------------------------
+** Footer
+** ---------------------------------------------- */
+
+
+
+/*--------------END BASE STRUCTURE--------------- */
+/* -------------------------------------------------
+** SITE SPECIFIC IMPORTS AND MODULES
+** ---------------------------------------------- */
+
+// @import "partials/page-home";
+// @import "partials/page-about-us";
+// @import "partials/page-contact-us";
+// @import "partials/sidebar";
