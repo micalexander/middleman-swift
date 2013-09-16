@@ -58,12 +58,12 @@ module Middleman
 
       private
       def replace_css_img_dir
-        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css'), 'r')
+        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css.scss'), 'r')
         buf = f.read
         buf.gsub!(/IMG_DIR/, options[:images_dir])
         f.close
 
-        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css'), 'w')
+        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css.scss'), 'w')
         f.write(buf)
         f.close
       end
