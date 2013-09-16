@@ -30,9 +30,6 @@ module Middleman
 
         empty_directory File.join(location, 'source', options[:css_dir])
         copy_file 'source/css/screen.css.scss', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
-        copy_file 'source/css/partials/_blog-styles.scss', File.join(location, 'source', options[:css_dir], 'partials/_blog-styles.scss')
-        copy_file 'source/css/partials/_cover.scss', File.join(location, 'source', options[:css_dir], 'partials/_cover.scss')
-        copy_file 'source/css/partials/_curtain.scss', File.join(location, 'source', options[:css_dir], 'partials/_curtain.scss')
         copy_file 'source/css/partials/_font-styles.scss', File.join(location, 'source', options[:css_dir], 'partials/_font-styles.scss')
         copy_file 'source/css/partials/_swift-framework.scss', File.join(location, 'source', options[:css_dir], 'partials/_swift-framework.scss')
         copy_file 'source/css/partials/_page-about-us.scss', File.join(location, 'source', options[:css_dir], 'partials/_page-about.scss')
@@ -42,7 +39,7 @@ module Middleman
         copy_file 'source/css/partials/_sidebar.scss', File.join(location, 'source', options[:css_dir], 'partials/_sidebar.scss')
         copy_file 'source/css/ie.scss', File.join(location, 'source', options[:css_dir], 'ie.scss')
         copy_file 'source/css/normalize.css', File.join(location, 'source', options[:css_dir], 'normalize.css')
-        copy_file 'source/css/print.scss', File.join(location, 'source', options[:css_dir], 'source/css/print.scss')
+        copy_file 'source/css/print.scss', File.join(location, 'source', options[:css_dir], 'print.scss')
         copy_file 'source/css/fonts/.gitkeep', File.join(location, 'source', options[:css_dir], 'fonts/.gitkeep')
 
         empty_directory File.join(location, 'source', options[:js_dir])
