@@ -6,10 +6,10 @@ module Middleman
     class Template < Middleman::Templates::Base
       class_option 'css_dir',
         default: 'css',
-        desc: 'The path to the css files',
+        desc: 'The path to the css files'
       class_option 'js_dir',
         default: 'js',
-        desc: 'The path to the javascript files',
+        desc: 'The path to the javascript files'
       class_option 'images_dir',
         default: 'img',
         desc: 'The path to the image files'
@@ -29,13 +29,13 @@ module Middleman
         copy_file 'source/robots.txt', File.join(location, 'source/robots.txt')
 
         empty_directory File.join(location, 'source', options[:css_dir])
-        copy_file 'source/css/screen.css', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
+        copy_file 'source/css/screen.css.scss', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
 
         empty_directory File.join(location, 'source', options[:js_dir])
         copy_file 'source/js/script.js', File.join(location, 'source', options[:js_dir], 'script.js')
 
         empty_directory File.join(location, 'source', options[:images_dir])
-        copy_file 'source/img/icon/mic-icon.png', File.join(location, 'source', options[:images_dir], 'mic-icon.png')
+        copy_file 'source/img/icon/mic-icon.png', File.join(location, 'source', options[:images_dir], 'icon/mic-icon.png')
         replace_css_img_dir
       end
 
