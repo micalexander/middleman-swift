@@ -29,10 +29,10 @@ module Middleman
         copy_file 'source/robots.txt', File.join(location, 'source/robots.txt')
 
         empty_directory File.join(location, 'source', options[:css_dir])
-        copy_file 'source/css/screen.css', File.join(location, 'source', options[:css_dir], 'all.css')
+        copy_file 'source/css/screen.css', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
 
         empty_directory File.join(location, 'source', options[:js_dir])
-        copy_file 'source/js/script.js', File.join(location, 'source', options[:js_dir], 'all.js')
+        copy_file 'source/js/script.js', File.join(location, 'source', options[:js_dir], 'script.js')
 
         empty_directory File.join(location, 'source', options[:images_dir])
         copy_file 'source/img/icon/mic-icon.png', File.join(location, 'source', options[:images_dir], 'mic-icon.png')
@@ -41,12 +41,12 @@ module Middleman
 
       private
       def replace_css_img_dir
-        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'r')
+        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css'), 'r')
         buf = f.read
         buf.gsub!(/IMG_DIR/, options[:images_dir])
         f.close
 
-        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'w')
+        f = File.open(File.join(location, 'source', options[:css_dir], 'screen.css'), 'w')
         f.write(buf)
         f.close
       end
