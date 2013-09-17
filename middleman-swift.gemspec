@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Middleman::Swift::VERSION
   spec.authors       = ["micalexander"]
   spec.email         = ["mic@emicalexander.com"]
-  spec.description   = %q{Swift is a Middleman Template that has native support for Slim and Sass}
+  spec.description   = %q{middleman-swift is a Middleman static site generator Template that has native support for Slim and Sass and is based off the HTML5 Boilerplate}
   spec.summary       = %q{A Middleman template using Slim Sass.}
   spec.homepage      = "https://github.com/micalexander/middleman-swift"
   spec.license       = "MIT"
