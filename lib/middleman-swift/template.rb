@@ -49,6 +49,7 @@ module Middleman
         copy_file 'source/js/PIE.php', File.join(location, 'source', options[:js_dir], 'PIE.php')
         copy_file 'source/js/plugins.js', File.join(location, 'source', options[:js_dir], 'plugins.js')
         copy_file 'source/js/respond.min.js', File.join(location, 'source', options[:js_dir], 'respond.min.js')
+        copy_file 'source/js/vendor/jquery-1.8.0.min.js', File.join(location, 'source', options[:js_dir], 'vendor/jquery-1.8.0.min.js')
 
         empty_directory File.join(location, 'source', options[:images_dir])
         copy_file 'source/img/icon/mic-icon.png', File.join(location, 'source', options[:images_dir], 'icon/mic-icon.png')
