@@ -37,8 +37,8 @@ module Middleman
         copy_file 'source/css/partials/_page-home.scss', File.join(location, 'source', options[:css_dir], 'partials/_page-home.scss')
         copy_file 'source/css/partials/_reset.scss', File.join(location, 'source', options[:css_dir], 'partials/_reset.scss')
         copy_file 'source/css/partials/_sidebar.scss', File.join(location, 'source', options[:css_dir], 'partials/_sidebar.scss')
-        copy_file 'source/css/ie.scss', File.join(location, 'source', options[:css_dir], 'ie.scss')
-        copy_file 'source/css/print.scss', File.join(location, 'source', options[:css_dir], 'print.scss')
+        copy_file 'source/css/ie.css.scss', File.join(location, 'source', options[:css_dir], 'ie.css.scss')
+        copy_file 'source/css/print.css.scss', File.join(location, 'source', options[:css_dir], 'print.css.scss')
         copy_file 'source/css/fonts/.gitkeep', File.join(location, 'source', options[:css_dir], 'fonts/.gitkeep')
 
         empty_directory File.join(location, 'source', options[:js_dir])
