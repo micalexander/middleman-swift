@@ -45,9 +45,6 @@ activate :livereload
 #   end
 # end
 
-# Add Bower's directory to Sprockets asset path. This expects Bower to be installed in the root of the Middleman project
-# Example: bower install jquery
-sprockets.append_path '../bower_components/'
 
 # Enable Slim support
 require 'slim'
@@ -72,6 +69,10 @@ set :images_dir, '<%= options[:images_dir] -%>'
 # Change the images directory
 # set :images_dir, "alternative_image_directory"
 <% end -%>
+
+# Add Bower's directory to Sprockets asset path. This expects Bower to be installed in the root of the Middleman project
+# Example: bower install jquery
+sprockets.append_path '../bower_components/'
 
 # Build-specific configuration
 configure :build do

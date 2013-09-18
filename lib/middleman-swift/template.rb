@@ -50,7 +50,7 @@ module Middleman
         copy_file 'source/js/respond.min.js', File.join(location, 'source', options[:js_dir], 'respond.min.js')
 
         empty_directory File.join(location, 'source', options[:images_dir])
-        copy_file 'source/img/icon/.gikeep', File.join(location, 'source', options[:images_dir], 'icon/.gitkeep')
+        copy_file 'source/img/icon/.gitkeep', File.join(location, 'source', options[:images_dir], 'icon/.gitkeep')
         replace_css_img_dir
       end
 
