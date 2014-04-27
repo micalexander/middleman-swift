@@ -40,9 +40,16 @@ activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
-#   def some_helper
-#     "Helping"
-#   end
+    def is_page page_classes
+        if page_classes != 'index'
+          return 'page'
+        end
+    end
+
+    def img
+        return "../#{@image_dir}"
+    end
+
 # end
 
 
@@ -73,6 +80,23 @@ set :images_dir, '<%= options[:images_dir] -%>'
 # Add Bower's directory to Sprockets asset path. This expects Bower to be installed in the root of the Middleman project
 # Example: bower install jquery
 sprockets.append_path '../bower_components/'
+
+# Compress images
+# activate :imageoptim do |image_optim|
+#   image_optim.pngout_options = false # Should disable pngout
+# end
+
+# activate :deploy do |deploy|
+#   deploy.method = :rsync
+#   deploy.host   = ""
+#   deploy.path   = "/var/www/vhosts/..."
+#   # Optional Settings
+#   # deploy.user  = "tvaughan" # no default
+#   # deploy.port  = 5309 # ssh port, default: 22
+#   # deploy.clean = true # remove orphaned files on remote host, default: false
+#   # deploy.flags = "-rltgoDvzO --no-p --del" # add custom flags, default: -avz
+#   deploy.build_before = true # default: false
+# end
 
 # Build-specific configuration
 configure :build do
