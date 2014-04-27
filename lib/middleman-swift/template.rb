@@ -32,7 +32,7 @@ module Middleman
         copy_file 'source/css/screen.css.scss', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
         copy_file 'source/css/framework/_swift-framework.scss', File.join(location, 'source', options[:css_dir], 'framework/_swift-framework.scss')
         copy_file 'source/css/framework/_reset.scss', File.join(location, 'source', options[:css_dir], 'framework/_reset.scss')
-        copy_file 'source/css/framework/typography.scss', File.join(location, 'source', options[:css_dir], 'framework/typography.scss')
+        copy_file 'source/css/framework/_typography.scss', File.join(location, 'source', options[:css_dir], 'framework/_typography.scss')
         copy_file 'source/css/modules/.gitkeep', File.join(location, 'source', options[:css_dir], 'modules/.gitkeep')
         copy_file 'source/css/global/_global.scss', File.join(location, 'source', options[:css_dir], 'global/_global.scss')
         copy_file 'source/css/pages/_page-home.scss', File.join(location, 'source', options[:css_dir], 'pages/_page-home.scss')
