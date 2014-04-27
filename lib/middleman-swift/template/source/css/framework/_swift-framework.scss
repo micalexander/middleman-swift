@@ -1,0 +1,262 @@
+// -------------------------------------------------
+// Swift Compass Imports
+// ---------------------------------------------- */
+@import "framework/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+@import "compass/css3/images";
+@import "compass/css3/opacity";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/typography/lists/inline-block-list";
+@import "compass/typography/text/replacement";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/sprites";
+
+
+// -------------------------------------------------
+// Swift Variables
+// ---------------------------------------------- */
+$page-width: 		1024px;
+$ani-speed: 		250ms;
+
+// -------------------------------------------------
+// Media Query Break Points
+// ---------------------------------------------- */
+$mq-mobile: 		420px;
+$mq-mob-tab: 		520px;
+$mq-tablet: 		620px;
+$mq-tab-desk: 		820px;
+$mq-desktop: 		920px;
+$mq-deskplus: 		1100px;
+$mq-deskplusplus: 	1200px;
+
+
+// -------------------------------------------------
+// Fixes
+// ---------------------------------------------- */
+
+* { @include box-sizing('border-box'); }
+
+/* iOS fixes */
+html { -webkit-text-size-adjust: none; }
+input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
+
+/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
+body:after { content: 'mobile'; display: none; }
+@media only screen and (min-width: $mq-desktop) {
+	body:after { content: 'desktop'; }
+}
+
+// -------------------------------------------------
+// Swift Mixins
+// ---------------------------------------------- */
+
+// media query
+@mixin breakpoint($point) {
+	@if $point == mobile {
+		@media (min-width: $mq-mobile)  { @content; }
+	}
+	@else if $point == mob-tab {
+		@media (min-width: $mq-mob-tab) { @content; }
+	}
+	@else if $point == tablet {
+		@media (min-width: $mq-tablet) { @content; }
+	}
+	@else if $point == tab-desk {
+		@media (min-width: $mq-tab-desk) { @content; }
+	}
+	@else if $point == desktop {
+		@media (min-width: $mq-desktop) { @content; }
+	}
+	@else if $point == deskplus {
+		@media (min-width: $mq-desktop) { @content; }
+	}
+	@else if $point == deskplusplus {
+		@media (min-width: $mq-desktop) { @content; }
+	}
+}
+// custom text selection treatment, developed from http://stackoverflow.com/a/10372599/136018
+@mixin selection($color, $background) {
+	$prefixes: ("-webkit-","-moz-", "-o-", "");
+    @each $prefix in $prefixes {
+        ::#{$prefix}selection {
+            color: $color;
+            background: $background;
+            text-shadow:none; // remove any text shadows:twitter.com/miketaylr/status/12228805301)
+        }
+    }
+    /* j.mp/webkit-tap-highlight-color */
+	a:link{-webkit-tap-highlight-color:$background;}
+	ins{background-color:$background;color:$color;text-decoration:none;}
+}
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+
+// Remove UL Styling
+@mixin ul-reset {
+	list-style: none;
+	margin: 0;
+	padding-bottom: 0;
+}
+
+
+@mixin areas-text-style-nav {
+	font-size: .875em;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+}
+
+@mixin hyphenate {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	// Non standard for webkit
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+@mixin column-50-pct {
+	width: 50%;
+	float: left;
+
+	p {
+		padding: 0 2em 1em;
+	}
+}
+
+@mixin column-33-pct {
+	width: (($page_width - 40 - 20*2) / 3);
+	float: left;
+	margin-left: 20px;
+
+	&.first { margin-left: 0; }
+
+	p {
+		padding: 0 0 1em;
+	}
+}
+
+@mixin column-66-pct {
+	width: (($page_width - 40 - 10) / 3 * 2);
+	float: left;
+	margin-left: 20px;
+
+	&.first { margin-left: 0; }
+
+	p {
+		padding: 0 2em 1em;
+	}
+}
+
+@mixin trans-fade-hidden {
+	@include transition(opacity $ani_speed linear 0ms, visibility $ani_speed linear 0ms);
+	visibility: hidden;
+	opacity: 0;
+}
+
+@mixin trans-fade-visible {
+	visibility: visible;
+	opacity: 1;
+}
+/*-----------------------------------*\
+	$GRID
+\*-----------------------------------*/
+
+.container {
+	margin: 0 auto;
+	max-width: 100%;
+	// padding: 0 30px;
+	// padding: 0 1.5rem;
+	@include transition(.5s);
+	@include transition-delay(.7s);
+	@include breakpoint(tablet) {
+		padding: 0;
+		max-width: $page_width;
+
+	}
+	.grid {
+		margin-left: 0;
+		max-width: none;
+		@include transition(.5s);
+		@include transition-delay(.7s);
+		@include breakpoint(tablet) {
+			margin-left: -2.5%;
+			max-width: 105%;
+		}
+		.unit {
+			display: block;
+			*display: inline;
+			vertical-align: top;
+			width: 100%;
+			margin-left: 0;
+			*zoom: 1;
+			/* Clearfix */
+			overflow: hidden;
+			*overflow: visible;
+			@include transition(.5s);
+			@include transition-delay(.7s);
+			& + .unit {
+				margin-top: 20px;
+			}
+			@include breakpoint(tablet) {
+				display: inline-block;
+				margin-left: 2.5%;
+				margin-right: -.25em;
+				&.one-of-one { width: 97.6%; }
+				&.one-of-two { width: 47.5%; }
+				&.one-of-three { width: 30.8333333%; }
+				&.two-of-three { width: 64.1666666%; }
+				&.one-of-four { width: 22.5%; }
+				&.three-of-four { width: 72.5%; }
+				&.one-of-five { width: 17.44%; }
+				&.two-of-five { width: 37.44%; }
+				&.three-of-five { width: 57.44%; }
+				&.four-of-five { width: 77.44%; }
+			}
+			.no-margin-unit {
+				*display: inline;
+				float: left;
+				vertical-align: top;
+				*zoom: 1;
+				/* Clearfix */
+				overflow: hidden;
+				*overflow: visible;
+				width: 100%;
+				margin-left: 0;
+				display: block;
+				@include transition(.5s);
+				@include transition-delay(.7s);
+				@include breakpoint(tablet) {
+					display: inline-block;
+					&.no-margin-one-of-one { width: 100%; }
+					&.no-margin-one-of-two { width: 30%; }
+					&.no-margin-one-of-three { width: 33.333333333%; }
+					&.no-margin-two-of-three { width: 66.666666666%; }
+					&.no-margin-one-of-four { width: 25%; }
+					&.no-margin-three-of-four { width: 75%; }
+					&.no-margin-one-of-five { width: 20%; }
+					&.no-margin-two-of-five { width: 40%; }
+					&.no-margin-three-of-five { width: 60%; }
+					&.no-margin-four-of-five { width: 80%; }
+				}
+				&.no-margin-unit {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+

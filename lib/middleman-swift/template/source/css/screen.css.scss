@@ -1,7 +1,6 @@
-@import "partials/swift-framework";
-@import "partials/font-styles";
-// @import "icon/*.png";
-// @include all-icon-sprites;
+
+@import "icon/*.png";
+@include all-icon-sprites;
 
 // COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
 
@@ -13,22 +12,6 @@
 /* -------------------------------------------------
 ** TEMPLATE
 ** ---------------------------------------------- */
-* { @include box-sizing('border-box'); }
-
-/* iOS fixes */
-html { -webkit-text-size-adjust: none; }
-input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
-
-/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
-body:after { content: 'mobile'; display: none; }
-@media only screen and (min-width: $mq-desktop) {
-	body:after { content: 'desktop'; }
-}
-// STANDARD MEDIA QUERY EXAMPLE
-
-// @media screen and (min-width: $mq-desktop) {
-// /* styles here */
-// } // END @media: $mq-desktop
 
 // SLECTOR SPECIFIC MEDIA QUERY EXAMPLE
 // .example-selector
@@ -41,40 +24,37 @@ body:after { content: 'mobile'; display: none; }
 // }
 // }
 
-
-/*--------------START BASE STRUCTURE-------------- */
 /* -------------------------------------------------
-** Body
+** Framework
 ** ---------------------------------------------- */
-
-/* -------------------------------------------------
-** Wrapper
-** ---------------------------------------------- */
+@import "framework/";
 
 /* -------------------------------------------------
-** Header
+** Global
 ** ---------------------------------------------- */
+@import "global/";
 
 /* -------------------------------------------------
-** Section
+** Vendor
 ** ---------------------------------------------- */
+@import "vendors/";
 
 /* -------------------------------------------------
-** Sidebar
+** overrides
 ** ---------------------------------------------- */
+@import "overrides/";
 
 /* -------------------------------------------------
-** Footer
+** partials
 ** ---------------------------------------------- */
+@import "partials/";
 
-
-
-/*--------------END BASE STRUCTURE--------------- */
 /* -------------------------------------------------
-** SITE SPECIFIC IMPORTS AND MODULES
+** modules
 ** ---------------------------------------------- */
+@import "modules/";
 
-// @import "partials/page-home";
-// @import "partials/page-about-us";
-// @import "partials/page-contact-us";
-// @import "partials/sidebar";
+/* -------------------------------------------------
+** pages
+** ---------------------------------------------- */
+@import "pages/";
