@@ -38,7 +38,6 @@ module Middleman
         copy_file 'source/css/pages/_page-home.scss', File.join(location, 'source', options[:css_dir], 'pages/_page-home.scss')
         copy_file 'source/css/partials/_sidebar.scss', File.join(location, 'source', options[:css_dir], 'partials/_sidebar.scss')
         copy_file 'source/css/overrides/.gitkeep', File.join(location, 'source', options[:css_dir], 'overrides/.gitkeep')
-        copy_file 'source/css/overrides/.gitkeep', File.join(location, 'source', options[:css_dir], 'overrides/.gitkeep')
         copy_file 'source/css/vendors/.gitkeep', File.join(location, 'source', options[:css_dir], 'vendors/.gitkeep')
         copy_file 'source/css/fonts/_fonts.scss', File.join(location, 'source', options[:css_dir], 'fonts/_fonts.scss')
         copy_file 'source/css/ie.css.scss', File.join(location, 'source', options[:css_dir], 'ie.css.scss')
