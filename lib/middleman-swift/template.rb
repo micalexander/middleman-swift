@@ -30,7 +30,7 @@ module Middleman
 
         empty_directory File.join(location, 'source', options[:css_dir])
         copy_file 'source/css/screen.css.scss', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
-        copy_file 'source/css/framwork/_swift-framework.scss', File.join(location, 'source', options[:css_dir], 'framework/_swift-framework.scss')
+        copy_file 'source/css/framework/_swift-framework.scss', File.join(location, 'source', options[:css_dir], 'framework/_swift-framework.scss')
         copy_file 'source/css/framework/_reset.scss', File.join(location, 'source', options[:css_dir], 'framework/_reset.scss')
         copy_file 'source/css/framework/typography.scss', File.join(location, 'source', options[:css_dir], 'framework/typography.scss')
         copy_file 'source/css/modules/.gitkeep', File.join(location, 'source', options[:css_dir], 'modules/.gitkeep')
