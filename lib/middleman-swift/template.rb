@@ -5,13 +5,13 @@ module Middleman
 
     class Template < Middleman::Templates::Base
       class_option 'css_dir',
-        default: 'css',
+        default: '@css',
         desc: 'The path to the css files'
       class_option 'js_dir',
-        default: 'js',
+        default: '@js',
         desc: 'The path to the javascript files'
       class_option 'images_dir',
-        default: 'img',
+        default: '@img',
         desc: 'The path to the image files'
 
       def self.source_root
@@ -44,14 +44,15 @@ module Middleman
         copy_file 'source/css/print.css.scss', File.join(location, 'source', options[:css_dir], 'print.css.scss')
 
         empty_directory File.join(location, 'source', options[:js_dir])
-        copy_file 'source/js/framework/boxsizing.htc', File.join(location, 'source', options[:js_dir], 'framework/boxsizing.htc')
-        copy_file 'source/js/framework/PIE.htc', File.join(location, 'source', options[:js_dir], 'framework/PIE.htc')
-        copy_file 'source/js/framework/PIE.php', File.join(location, 'source', options[:js_dir], 'framework/PIE.php')
-        copy_file 'source/js/framework/respond.min.js', File.join(location, 'source', options[:js_dir], 'framework/respond.min.js')
+        copy_file 'source/js/framework/.gitkeep', File.join(location, 'source', options[:js_dir], 'framework/.gitkeep')
         copy_file 'source/js/modules/.gitkeep', File.join(location, 'source', options[:js_dir], 'modules/.gitkeep')
         copy_file 'source/js/vendors/.gitkeep', File.join(location, 'source', options[:js_dir], 'vendors/.gitkeep')
         copy_file 'source/js/overrides/.gitkeep', File.join(location, 'source', options[:js_dir], 'overrides/.gitkeep')
         copy_file 'source/js/pages/.gitkeep', File.join(location, 'source', options[:js_dir], 'pages/.gitkeep')
+        copy_file 'source/js/boxsizing.htc', File.join(location, 'source', options[:js_dir], 'boxsizing.htc')
+        copy_file 'source/js/PIE.htc', File.join(location, 'source', options[:js_dir], 'PIE.htc')
+        copy_file 'source/js/PIE.php', File.join(location, 'source', options[:js_dir], 'PIE.php')
+        copy_file 'source/js/respond.min.js', File.join(location, 'source', options[:js_dir], 'respond.min.js')
         copy_file 'source/js/script.js', File.join(location, 'source', options[:js_dir], 'script.js')
         copy_file 'source/js/ie.js', File.join(location, 'source', options[:js_dir], 'ie.js')
 
