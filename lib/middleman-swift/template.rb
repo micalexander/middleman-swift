@@ -5,13 +5,13 @@ module Middleman
 
     class Template < Middleman::Templates::Base
       class_option 'css_dir',
-        default: '@css',
+        default: @js_dir,
         desc: 'The path to the css files'
       class_option 'js_dir',
-        default: '@js',
+        default: @js_dir,
         desc: 'The path to the javascript files'
       class_option 'images_dir',
-        default: '@img',
+        default: @image_dir,
         desc: 'The path to the image files'
 
       def self.source_root
