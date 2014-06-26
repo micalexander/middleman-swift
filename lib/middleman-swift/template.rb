@@ -27,8 +27,7 @@ module Middleman
         copy_file 'source/crossdomain.xml', File.join(location, 'source/crossdomain.xml')
         copy_file 'source/humans.txt', File.join(location, 'source/humans.txt')
         copy_file 'source/robots.txt', File.join(location, 'source/robots.txt')
-        puts  "css dir #{options[:css_dir]}"
-        puts  "location #{location}"
+
         empty_directory File.join(location, 'source', options[:css_dir])
         copy_file 'source/css/screen.css.scss', File.join(location, 'source', options[:css_dir], 'screen.css.scss')
         copy_file 'source/css/framework/_swift-framework.scss', File.join(location, 'source', options[:css_dir], 'framework/_swift-framework.scss')
