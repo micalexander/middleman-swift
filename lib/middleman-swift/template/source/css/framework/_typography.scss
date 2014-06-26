@@ -14,11 +14,10 @@ body,select,input,textarea{color:#333;}
 $heading-font: 	'Helvetica', Arial, sans-serif;
 $body-font: 	'Helvetica', Arial, sans-serif;
 
-$body-color: 	#4D4D4D;
-$heading-color: #4D4D4D;
-$heading-green: #868054;
-$link-color: 	#868054;
-$link-hover: 	#868054;
+$body-color: 	#666666;
+$heading-color: #666666;
+$link-color: 	#4c7cd3;
+$link-hover: 	#7ca2df;
 
 body {
 	color: $body-color;
@@ -38,7 +37,7 @@ a {
 }
 h1 {
 	margin-bottom: 5px;
-	color: $heading-green;
+	color: $heading-color;
 	font-family: $heading-font;
 	font-weight: 700;
 	// @include font-smoothing(on);
