@@ -5,16 +5,16 @@ source 'http://rubygems.org'
 gem "middleman", "~><%= Middleman::VERSION %>"
 
 # Adds Slim support for rapid development
-gem "slim", "~> 2.0.0"
+gem "slim", "~> 3.0.6"
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+# gem "middleman-livereload", "~> 3.1.0"
 
 # Favicon maker
-gem "middleman-favicon-maker"
+# gem "middleman-favicon-maker"
 
-# Fmport entire sass folders
-gem 'sass-globbing', '~> 1.1.0'
+# Import entire sass folders
+# gem 'sass-globbing', '~> 1.1.0'
 
 # Deploy
 gem "middleman-deploy"
