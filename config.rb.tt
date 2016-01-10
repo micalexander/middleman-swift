@@ -38,11 +38,6 @@ activate :external_pipeline,
 #   end
 # end
 
-# Compress images
-activate :imageoptim do |image_optim|
-  image_optim.pngout_options = false # Should disable pngout
-end
-
 # activate :deploy do |deploy|
 #   deploy.method = :rsync
 #   deploy.host   = ""
