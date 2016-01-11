@@ -18,9 +18,9 @@ activate :livereload
 
 # External pipeline for gulp
 # activate :external_pipeline,
-#   name: :gulp,
+#   name:    :gulp,
 #   command: build? ? './node_modules/gulp/bin/gulp.js buildProd' : './node_modules/gulp/bin/gulp.js default',
-#  source: ".tmp/dist"
+#   source:  '.tmp/dist'
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
