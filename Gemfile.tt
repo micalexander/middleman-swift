@@ -12,3 +12,5 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 
 gem "slim", "~> 3.0.6"
+
+gem "middleman-livereload"

@@ -14,6 +14,8 @@ set :image_dir, 'img'
 
 require 'slim'
 
+activate :livereload
+
 # External pipeline for gulp
 # activate :external_pipeline,
 #   name: :gulp,
