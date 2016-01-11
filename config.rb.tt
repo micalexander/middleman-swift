@@ -10,7 +10,7 @@ page '/*.txt', layout: false
 
 set :css_dir,   'css'
 set :js_dir,    'js'
-set :image_dir, 'img'
+set :images_dir, 'img'
 
 require 'slim'
 
@@ -58,18 +58,18 @@ activate :livereload
 configure :build do
 
   # Minify HTML on build
-  activate :minify_html
+  # activate :minify_html
 
   # Minify CSS on build
-  activate :minify_css
+  # activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  # activate :minify_javascript
 
   # gzip assets on build
-  activate :gzip
+  # activate :gzip
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
 end
